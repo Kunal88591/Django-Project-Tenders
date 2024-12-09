@@ -1,0 +1,171 @@
+{% load static %}
+<html>
+<head>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+
+<title>Tender</title>
+<link href="{% static 'images/logo.png' %}" rel="icon" />
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="{% static 'jquery.dropotron-1.0.js' %}"></script>
+<script type="text/javascript" src="{% static 'jquery.slidertron-1.1.js' %}"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#menu > ul').dropotron({
+			mode: 'fade',
+			globalOffsetY: 11,
+			offsetY: -15
+		});
+	});
+</script>
+</head>
+<body>
+<!-- wrapper starts -->
+<div id="wrapper">
+	<!-- header starts -->
+	<div id="header">
+	{% block header %}	
+		<div id="logo">
+			<h1><a href="#">Tender</a></h1>
+		</div>
+		<div id="slogan">
+			<h2>Design by Tender</h2>
+		</div>
+	{% endblock header %}
+	</div>
+	<!-- header ends -->
+
+	<!-- menu starts -->
+	<div id="menu">
+		{% block nav %}
+		<ul>
+			<li class="first" ><a href="/">Home</a></li>
+			<li><a href="/about/">About</a></li>
+			<li><a href="/contact/">Contact</a></li>
+			<li><a href="/service/">Service</a></li>
+			<li><a href="/register/">Register</a></li>
+			<li>
+				<span class="opener">Pages<b></b></span>
+				<ul>
+					<li><a href="#">Blogs</a></li>
+					<li><a href="#">Events</a></li>
+				</ul>
+			</li>
+			<li class="last"><a href="/login/">Login</a></li>
+		</ul>
+		{% endblock nav %}
+		<br class="clearfix" />
+	</div>
+	<!-- menu ends -->
+
+	<!-- slider starts -->	
+	{% block slider %}
+	<script type="text/javascript">
+		$(function() {
+			$('#slider').slidertron({
+				viewerSelector: '.viewer',
+				indicatorSelector: '.indicator span',
+				reelSelector: '.reel',
+				slidesSelector: '.slide',
+				speed: 'slow',
+				advanceDelay: 4000
+			});
+		});
+	</script>
+	<div id="slider">
+		<div class="viewer">
+			<div class="reel">
+				<div class="slide">
+					<img src="{% static 'images/banner1.jpg' %}" width="870" height="230" alt="" />
+				</div>
+				<div class="slide">
+					<img src="{% static 'images/banner2.jpg' %}" width="870" height="230" alt="" />
+				</div>
+				<div class="slide">
+					<img src="{% static 'images/banner3.jpg' %}" width="870" height="230" alt="" />
+				</div>
+				<div class="slide">
+					<img src="{% static 'images/banner4.jpg' %}" width="870" height="230" alt="" />
+				</div>
+				<div class="slide">
+					<img src="{% static 'images/banner5.jpg' %}" width="870" height="230" alt="" />
+				</div>
+			</div>
+		</div>
+		<div class="indicator">
+			<span>1</span>
+			<span>2</span>
+			<span>3</span>
+			<span>4</span>
+			<span>5</span>
+		</div>
+	</div>
+	{% endblock slider %}
+	<!-- slider ends -->
+
+
+	<!-- page starts -->
+	<div id="page">
+	{% block page %}	
+		<!-- content ends -->
+		<div id="content">
+			{% block content %}
+			{% endblock content %}
+			<br class="clearfix" />
+		</div>
+		<!-- content ends -->
+
+		<!-- sidebar starts -->
+		<div id="sidebar">
+			{% block sidebar %}
+			<div class="box">
+				<h3>Social links</h3>
+				<ul class="list">
+					<li class="first"><a href="#">@Facebook</a></li>
+					<li><a href="#">@LinkedIn</a></li>
+					<li><a href="#">@Twitter</a></li>
+					<li><a href="#">@Gmail</a></li>
+					<li class="last"><a href="#">@LinkedIn</a></li>
+				</ul>
+			</div>
+			{% endblock sidebar %}
+		</div>
+		<!-- sidebar ends -->
+
+		{% endblock page %}
+		<br class="clearfix" />
+	</div>
+	<!-- page ends -->
+
+	{% block pagebottom %}
+	<div id="page-bottom">
+		<div id="page-bottom-content">
+			<h3>About us</h3>
+			<p style="text-align:justify;">
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi quis corporis itaque nulla magnam fuga aliquam accusantium maxime aspernatur iusto dignissimos molestias nisi dolores quia, sint laborum ratione! Placeat, hic accusamus. Tenetur cupiditate voluptas maxime reiciendis perspiciatis aut eligendi, et, modi ex sed maiores quaerat, tempora pariatur asperiores quis. Velit, soluta quae! Dolor optio ipsum, qui mollitia veritatis magnam quaerat quis officia sit itaque porro exercitationem neque quae dicta ea fugiat! Possimus illum neque quidem, in itaque provident aliquam sint quas repellat nostrum laboriosam ratione animi veritatis cumque nihil pariatur inventore voluptatum veniam ipsum et deserunt. Obcaecati quasi veniam iure.
+			</p>
+		</div>
+		<div id="page-bottom-sidebar">
+			<h3>Quick links</h3>
+			<ul class="list">
+				<li class="first"><a href="#">Home</a></li>
+				<li><a href="#">Register</a></li>
+				<li class="last"><a href="#">Login</a></li>
+			</ul>
+		</div>
+		<br class="clearfix" />
+	</div>
+	{% endblock pagebottom %}
+</div>
+<!-- wrapper ends -->
+
+<div id="footer">
+	<h1>&copy; Tender. All rights reserved 2024-2025. Design by <a href="">Tender</a></h1>
+</div>
+
+
+</body>
+</html>

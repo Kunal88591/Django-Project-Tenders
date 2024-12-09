@@ -1,0 +1,40 @@
+{% extends 'master_template.html' %}
+
+{% block header %}	
+<div id="logo">
+    <h1><a href="#">Tender</a></h1>
+</div>
+<div id="slogan">
+    <h2>Welcome User : {{sunm}}</h2>
+</div>
+{% endblock header %}
+
+{% block nav %}
+<ul>
+    <li class="first" ><a href="/user/">User Home</a></li>
+    <li><a href="/user/viewcategory/">Search Tenders</a></li>
+    <li><a href="/user/addtender/">Add Tender</a></li>
+    <li><a href="/user/funds/">Funds</a></li>
+    <!--<li><a href="/service/">Service</a></li>
+    <li><a href="/register/">Register</a></li>
+    <li>
+        <span class="opener">Pages<b></b></span>
+        <ul>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">Events</a></li>
+        </ul>
+    </li>-->
+    <li class="last"><a href="/login/">Logout</a></li>
+</ul>
+{% endblock nav %}
+
+
+{% block slider %}
+{% endblock slider %}
+
+{% block page %}
+<h1>Welcome to User panel</h1>	
+{% endblock page %}
+
+{% block pagebottom %}
+{% endblock pagebottom %}

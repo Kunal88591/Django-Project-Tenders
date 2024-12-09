@@ -1,0 +1,63 @@
+{% extends 'userhome.html' %}
+
+{% block page %}
+
+<style>
+
+.form_field
+{
+ width:500px;
+ height:30px;	
+}
+	
+</style>
+
+
+<h1>Add Tender Here!!!</h1>	
+
+<font color="blue">{{output}}</font>
+<form method="post" action="/user/addtender/" enctype="multipart/form-data" >
+{% csrf_token %}	
+<table cellspacing="30" >
+<tr>
+<td>Title</td>
+<td><input type="text" class="form_field" name="title" placeholder="Enter Title"/></td>	
+</tr>    
+<tr>
+<td>Category Name</td>
+<td><select class="form_field" name="subcatname">
+<option>Select Category</option>    
+{% for row in sclist %}
+<option>{{row.subcatname}}</option>
+{% endfor %}
+</select></td>	
+</tr>
+<tr>
+<td>Description</td>
+<td>
+    <textarea  cols="60" rows="7" name="description" placeholder="Enter Description"></textarea> 
+</td>	
+</tr>
+<tr>
+<td>Tender Docs</td>
+<td><input type="file" class="form_field" name="tenderfile" /></td>	
+</tr>
+<tr>
+<td>Start Date</td>
+<td><input type="date" class="form_field" name="sdate" placeholder="Enter Start Date"/></td>	
+</tr>
+<tr>
+<td>End Date</td>
+<td><input type="date" class="form_field" name="edate" placeholder="Enter End Date"/></td>	
+</tr>
+<tr>
+<td colspan="2">
+<center>
+<button type="submit">Add Tender</button>
+</center>
+</td>	
+</tr>
+</table>
+</form>
+
+{% endblock page %}

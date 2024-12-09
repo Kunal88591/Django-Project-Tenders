@@ -1,0 +1,42 @@
+{% extends 'master_template.html' %}
+
+
+{% block content %}
+
+<style>
+
+	.form_field
+	{
+	 width:500px;
+	 height:30px;	
+	}
+	
+	</style>
+
+<div class="box">
+<h2>Login Here!!!</h2>
+<font color="blue">{{output}}</font>
+<form method="post" action="/login/" >
+{% csrf_token %}	
+<table cellspacing="30" >
+<tr>
+<td>Email</td>
+<td><input type="email" class="form_field" name="email" placeholder="Enter Email"/></td>	
+</tr>
+<tr>
+<td>Password</td>
+<td><input type="password" class="form_field" name="password" placeholder="Enter Password"/></td>	
+</tr>
+<tr>
+<td colspan="2">
+<center>
+<button type="submit">Login</button>
+</center>
+</td>	
+</tr>
+</table>
+</form>
+</div>
+{% endblock content %}
+
+

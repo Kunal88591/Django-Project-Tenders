@@ -1,0 +1,62 @@
+{% extends 'adminhome.html' %}
+
+{% block page %}
+
+<style>
+
+	.form_field
+	{
+	 width:500px;
+	 height:30px;	
+	}
+	
+	</style>
+
+<h1>Edit Profile Here!!!</h1>	
+
+<form method="post" action="/myadmin/epadmin/" >
+{% csrf_token %}	
+<table cellspacing="30" >
+<tr>
+<td>Name</td>
+<td><input type="text" class="form_field" name="name" value="{{userDetails.name}}"/></td>	
+</tr>
+<tr>
+<td>Email</td>
+<td><input type="email"readonly class="form_field" name="email" value="{{userDetails.email}}"/></td>	
+</tr>
+<tr>
+<td>Mobile</td>
+<td><input type="text" class="form_field" name="mobile" value="{{userDetails.mobile}}" /></td>	
+</tr>
+<tr>
+<td>Address</td>
+<td><textarea rows="5" cols="60" name="address" >{{userDetails.address}}</textarea></td>	
+</tr>
+<tr>
+<td>City</td>
+<td><select name="city" class="form_field" >
+	<option>{{userDetails.city}}</option>
+	<option>Indore</option>
+	<option>Bhopal</option>
+	<option>Ujjain</option>
+</select></td>	
+</tr>
+<tr>
+<td>Gender</td>
+<td>
+<input type="radio" name="gender" value="male" {{m}} /> Male
+<input type="radio" name="gender" value="female" {{f}} /> Female
+</td>	
+</tr>
+<tr>
+<td colspan="2">
+<center>
+<button type="submit">Edit</button>
+</center>
+</td>	
+</tr>
+</table>
+</form>
+
+{% endblock page %}

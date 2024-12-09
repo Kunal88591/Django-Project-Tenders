@@ -1,0 +1,38 @@
+{% extends 'userhome.html' %}
+
+{% block page %}
+<style>
+#catmain
+{
+ min-height:300px;
+ width:600px;
+}
+.catpart
+{
+ height:150px;
+ width:200px;
+ float:left;   
+}    
+.catpart a
+{
+ text-decoration:none;
+}
+</style>
+<h1>Category >> </h1>	
+<br/>
+<center>
+<div id="catmain" >
+{% for row in clist %}
+    <div class="catpart" >
+        <a href="/user/viewsubcategory/?catname={{row.catname}}" >
+        <img src={{MEDIA_URL}}{{row.caticonname}} height="100" width="150" />
+        <br/>
+        <b>{{row.catname}}</b>   
+        </a>
+    </div>
+{% endfor %}
+</div>
+</center>
+
+{% endblock page %}
+

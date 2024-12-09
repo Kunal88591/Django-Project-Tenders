@@ -1,0 +1,47 @@
+{% extends 'userhome.html' %}
+
+{% block page %}
+<h1>Apply for tender!!!</h1>	
+<br/>
+<center>
+<table cellspacing="10" style="border:2px solid black;">
+<tr>
+<td>Title</td>
+<td>{{t.title}}</td>    
+</tr>
+
+<tr>
+<td>Description</td>
+<td>{{t.description}}</td>    
+</tr>
+
+<tr>
+<td>Category</td>
+<td>{{t.subcatname}}</td>    
+</tr>
+
+<tr>
+<td>Start Date</td>
+<td>{{t.sdate}}</td>    
+</tr>
+
+<tr>
+<td>End Date</td>
+<td>{{t.edate}}</td>    
+</tr>
+
+<tr>
+<td>Tender Docs</td>
+<td><a href={{MEDIA_URL}}{{t.tenderfilename}} >Download</a></td>    
+</tr>
+
+<tr>
+<td>Info</td>
+<td>{{t.info}}</td>    
+</tr>    
+</table>  
+<br/><br/>  
+</center>
+
+{% endblock page %}
+

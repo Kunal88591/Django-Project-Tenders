@@ -1,0 +1,38 @@
+{% extends 'userhome.html' %}
+
+{% block page %}
+<style>
+#catmain
+{
+ min-height:300px;
+ width:600px;
+}
+.catpart
+{
+ height:150px;
+ width:200px;
+ float:left;   
+}    
+.catpart a
+{
+ text-decoration:none;
+}
+</style>
+<h1>Sub Category >> {{catname}}</h1>	
+<br/>
+<center>
+<div id="catmain" >
+{% for row in sclist %}
+    <div class="catpart" >
+        <a href="/user/viewtender/?subcatname={{row.subcatname}}" >
+        <img src={{MEDIA_URL}}{{row.subcaticonname}} height="100" width="150" />
+        <br/>
+        <b>{{row.subcatname}}</b>   
+        </a>
+    </div>
+{% endfor %}
+</div>
+</center>
+
+{% endblock page %}
+

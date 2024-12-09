@@ -1,0 +1,29 @@
+{% extends 'userhome.html' %}
+
+{% block page %}
+<h1>Tenders List >> {{subcatname}}</h1>	
+<br/>
+<center>
+{% for row in tlist %}
+<a href="/user/tendermain/?tenderid={{row.tenderid}}" >
+<table cellspacing="10" style="border:2px solid black;">
+<tr>
+<td>Title</td>
+<td>{{row.title}}</td>    
+</tr>
+<tr>
+<td>Description</td>
+<td>{{row.description}}</td>    
+</tr>
+<tr>
+<td>Info</td>
+<td>{{row.info}}</td>    
+</tr>    
+</table>  
+</a>
+<br/><br/>  
+{% endfor %}
+</center>
+
+{% endblock page %}
+
